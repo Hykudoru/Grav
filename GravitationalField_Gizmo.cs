@@ -7,7 +7,6 @@ public class GravitationalField : MonoBehaviour
 {
     [SerializeField] [Range(0f, 1000f)] float strength = 100f;
     [SerializeField] LayerMask layers = Physics.AllLayers;
-    private static float G = 6.67f; //0.0000000000667f;
     Rigidbody rb;
     Collider collider;
 
@@ -58,11 +57,6 @@ public class GravitationalField : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        
-    }
-
     private void OnDrawGizmos()
     {
         Collider[] colliders = null;
@@ -80,7 +74,7 @@ public class GravitationalField : MonoBehaviour
             if (box)
             {
                 Gizmos.DrawWireCube(box.transform.position, box.bounds.size);
-                colliders = Physics.OverlapBox(transform.position, box.bounds.size /2f, box.transform.rotation, layers);
+                colliders = Physics.OverlapBox(transform.position, box.bounds.size / 2f, box.transform.rotation, layers);
             }
         }
 
@@ -91,7 +85,7 @@ public class GravitationalField : MonoBehaviour
             for (int i = 0; i < colliders.Length; i++)
             {
                 Collider col = colliders[i];
-                
+
                 if (col.gameObject == gameObject)
                 {
                     return;
