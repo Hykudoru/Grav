@@ -1,6 +1,7 @@
 # Grav
  
 Support email: iamalexfish@gmail.com
+Patreon: https://www.patreon.com/Hykudoru
 
 How to Install:
 1. Import the assets into your Assets folder.
